@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 600;
+  box-shadow: 0px 5px 10px -5px rgba(175, 175, 175, 1);
+  position: relative;
+}
+
+#content {
+  background-color: rgb(248, 244, 239);
+  flex-grow: 1;
+}
+
+footer {
+  margin-top: auto;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  background-color: rgb(248, 244, 239);
+}
