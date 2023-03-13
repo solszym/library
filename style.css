@@ -1,3 +1,10 @@
+:root {
+  --main-color: rgb(248, 244, 239);
+  --green: #9fff9c;
+  --red: #ff9c9c;
+  --font: "Poppins", sans-serif;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -5,6 +12,8 @@ body {
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
 }
+
+/* Header */
 
 header {
   height: 100px;
@@ -43,8 +52,115 @@ button:hover {
   filter: brightness(85%);
 }
 
+/* Book Window */
+
+#newBookWindow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 300px;
+  height: 400px;
+}
+
+#newBookWindowContent {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  background-color: var(--main-color);
+}
+
+#newBookTitle {
+  font-size: 21px;
+  font-weight: 700;
+  padding-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+form input {
+  height: 50px;
+  width: 200px;
+  border: none;
+  border-radius: 10px;
+  padding: 0px 10px;
+  font-family: var(--font);
+  font-weight: 500;
+  font-size: 20px;
+}
+
+input::placeholder {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+input:focus {
+  outline: none;
+}
+
+#readDiv {
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  gap: 10px;
+}
+
+#readField {
+  height: 20px;
+  width: 20px;
+}
+
+#submitBtn {
+  border: none;
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: var(--green);
+  font-family: var(--font);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Modals */
+
+#newBookWindow.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 200ms ease-in-out;
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Middle Content */
+
 #content {
-  background-color: rgb(248, 244, 239);
+  background-color: var(--main-color);
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -54,6 +170,8 @@ button:hover {
   min-height: 100%;
   width: 75%;
 }
+
+/* Footer */
 
 footer {
   margin-top: auto;

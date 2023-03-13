@@ -15,16 +15,57 @@
     <title>Library</title>
   </head>
   <body>
+    <div id="newBookWindow">
+      <div id="newBookWindowContent">
+        <div id="newBookTitle">Add new book</div>
+        <form action="#" id="bookForm">
+          <input
+            type="text"
+            name="title"
+            id="titleField"
+            placeholder="Title"
+            required
+          />
+          <input
+            type="author"
+            name="author"
+            id="authorField"
+            placeholder="Author"
+            required
+          />
+          <input
+            type="number"
+            name="pages"
+            id="pagesField"
+            placeholder="Pages"
+            min="1"
+            required
+          />
+          <div id="readDiv">
+            Have you read it?
+            <input type="checkbox" name="read" id="readField" required />
+          </div>
+          <button id="submitBtn">Submit</button>
+        </form>
+      </div>
+    </div>
     <header>
       <div id="header-content">
-        <button class="header-btn">Add Book</button>
+        <button
+          class="header-btn"
+          id="addBookBtn"
+          data-modal-target="#newBookWindow"
+        >
+          Add Book
+        </button>
         <div id="title">library</div>
-        <button class="header-btn">Log in</button>
+        <button class="header-btn" id="loginBtn">Log in</button>
       </div>
     </header>
     <div id="content">
       <div id="library"></div>
     </div>
     <footer>Copyright © Szymon Kowalczyk 2023</footer>
+    <div id="overlay"></div>
   </body>
 </html>
