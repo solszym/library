@@ -9,14 +9,17 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-function addBookToLibrary(title, author, pages, read) {
+function addBookToMyLibrary(title, author, pages, read) {
   const newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
+  let bookCard = document.createElement("div");
+  bookCard.classList.add("bookCards");
+  library.append(bookCard);
 }
 
 // const hobbit = new Book("hobbit", "tolkien", 294, true);
 
-// addBookToLibrary(hobbit);
+// addBookToMyLibrary(hobbit);
 // console.log(myLibrary);
 
 const bookForm = document.getElementById("bookForm");
@@ -27,7 +30,7 @@ bookForm.addEventListener("submit", (e) => {
   let pages = document.getElementById("pagesField").value;
   let read = document.getElementById("readField").value;
 
-  addBookToLibrary(title, author, pages, read);
+  addBookToMyLibrary(title, author, pages, read);
   const modal = document.getElementById("newBookWindow");
   closeModal(modal);
 });

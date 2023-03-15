@@ -3,6 +3,8 @@
   --green: #9fff9c;
   --red: #ff9c9c;
   --font: "Poppins", sans-serif;
+  --my-width: 1200px;
+  --card-height: 200px;
 }
 
 body {
@@ -31,7 +33,7 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  width: 75%;
+  width: var(--my-width);
 }
 
 .header-btn {
@@ -167,8 +169,23 @@ input:focus {
 }
 
 #library {
+  margin: 20px;
   min-height: 100%;
-  width: 75%;
+  width: var(--my-width);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: var(--card-height);
+  gap: 20px;
+}
+
+.test {
+  height: 200px;
+  border: solid red;
+}
+
+.bookCards {
+  height: var(--card-height);
+  border: red solid;
 }
 
 /* Footer */
